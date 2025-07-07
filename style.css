@@ -108,6 +108,7 @@ body {
 .chat-footer {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 10px;
   background-color: #f1f1f1;
   border-top: 1px solid #ddd;
@@ -147,6 +148,7 @@ body {
   text-decoration: none;
   padding: 10px 0;             /* Add some spacing */
   border: 1px solid #ccc;
+  transition: 0.5s ease;
 }
 
 .contact:hover {

@@ -1,0 +1,23 @@
+placemnet cell page
+    placement cell to be replaced by placement team + write up + slider of images
+        team, recruiter, banner of placement records
+    overview of placement statistics
+    name wwith contact of memebers
+    placement team (student) 3years
+    core memeber placement cell (make it a card)
+
+
+placement page
+    placement - last 3 or 5 years
+    hero sections - statistics
+
+
+placemnet nav
+    about placement
+    speak
+        highlighted 
+        rounded
+    industrial visit
+        gallery (images)
+
+internships -> ?

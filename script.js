@@ -21,9 +21,9 @@ chatIcon.onclick = () => {
   chatIcon.style.display = 'none';
   currentRole = null;
   chatMessages.innerHTML = '';
-  showBotMessage("👋 Hello! I'm JIMS Assistant. Are you a:");
+  showBotMessage("👋 Hello! I'm <strong style='color:#007bff;'>Jino</strong>. Are you a:");
   setTimeout(() => {
-    showOptions(['New Admission', 'Student', 'Parent', 'Career at JIMS'], true);
+    showOptions(['Admission Aspirant', 'Student', 'Parent', 'Job Seeker'], true);
   }, 600);
 };
 
@@ -114,85 +114,57 @@ function showOptions(options, isRoot = false) {
 
 function showPreviousOptions() {
   if (!currentRole) {
-    showBotMessage("👋 Hello! I'm JIMS Assistant. Are you a:");
+    showBotMessage("👋 Hello! I'm <strong style='color:#007bff;'>Jino</strong>. Are you a:");
     setTimeout(() => {
-      showOptions(['New Admission', 'Student', 'Parent', 'Career at JIMS'], true);
+      showOptions(['Admission Aspirant', 'Student', 'Parent', 'Job Seeker'], true);
     }, 600);
   } else if (currentRole === 'student') {
     showBotMessage("🎓 What do you want to know?");
-    setTimeout(() => {
-      showOptions(studentOptions);
-    }, 600);
+    setTimeout(() => showOptions(studentOptions), 600);
   } else if (currentRole === 'parent') {
     showBotMessage("👨‍👩‍👧‍👦 How can I help you?");
-    setTimeout(() => {
-      showOptions(parentOptions);
-    }, 600);
+    setTimeout(() => showOptions(parentOptions), 600);
   } else if (currentRole === 'admission') {
     showBotMessage("📝 What would you like to explore?");
-    setTimeout(() => {
-      showOptions(admissionOptions);
-    }, 600);
-  } else if (currentRole === 'career at jims') {
-    window.open('https://www.jimsd.org/placements.php', '_blank');
-
-    // Step 1: Show the first message
+    setTimeout(() => showOptions(admissionOptions), 600);
+  } else if (currentRole === 'job_seeker') {
+    window.open('https://www.jimsd.org/career.php', '_blank');
     showBotMessage("💼 Opening career opportunities at JIMS for you!");
-
-    // Step 2: After delay, show the next message + options
     setTimeout(() => {
-      showBotMessage("👋 Hello! I'm JIMS Assistant. Are you a:");
-
+      showBotMessage("👋 Hello! I'm <strong style='color:#007bff;'>Jino</strong>. Are you a:");
       setTimeout(() => {
-        showOptions(['New Admission', 'Student', 'Parent', 'Career at JIMS'], true);
-      }, 400); // small delay to let the previous message render before showing options
-
-    }, 800); // adjust delay as needed (should match how fast one message animates in)
+        showOptions(['Admission Aspirant', 'Student', 'Parent', 'Job Seeker'], true);
+      }, 400);
+    }, 800);
   }
 }
 
 async function handleFlow(choice, isButtonClick = false) {
   const lowerChoice = choice.toLowerCase().trim();
 
-  if (['student', 'parent', 'new admission', 'career at jims'].includes(lowerChoice)) {
+  if (['student', 'parent', 'admission aspirant', 'job seeker'].includes(lowerChoice)) {
     if (lowerChoice === 'student') {
       currentRole = 'student';
       showBotMessage("🎓 Great! What do you want to know?");
-      setTimeout(() => {
-        showOptions(studentOptions);
-      }, 600);
+      setTimeout(() => showOptions(studentOptions), 600);
     } else if (lowerChoice === 'parent') {
       currentRole = 'parent';
       showBotMessage("👨‍👩‍👧‍👦 How can I help you?");
-      setTimeout(() => {
-        showOptions(parentOptions);
-      }, 600);
-    } else if (lowerChoice === 'new admission') {
-      currentRole = 'admission'; // Internally use 'admission' for consistency
+      setTimeout(() => showOptions(parentOptions), 600);
+    } else if (lowerChoice === 'admission aspirant') {
+      currentRole = 'admission';
       showBotMessage("📝 What would you like to explore?");
-      setTimeout(() => {
-        showOptions(admissionOptions);
-      }, 600);
-    } else if (lowerChoice === 'career at jims') {
-      currentRole = 'career at jims';
-
-      // Open placement page
+      setTimeout(() => showOptions(admissionOptions), 600);
+    } else if (lowerChoice === 'job seeker') {
+      currentRole = 'job_seeker';
       window.open('https://www.jimsd.org/career.php', '_blank');
-
-      // Step 1: Show career message
       showBotMessage("💼 Opening career opportunities at JIMS for you!");
-
-      // Step 2: Wait, then show next bot message
       setTimeout(() => {
-        const msgText = "👋 Hello! I'm JIMS Assistant. Are you a:";
-        showBotMessage(msgText);
-
-        // Step 3: Wait for that message to appear fully before showing options
+        showBotMessage("👋 Hello! I'm <strong style='color:#007bff;'>Jino</strong>. Are you a:");
         setTimeout(() => {
-          showOptions(['New Admission', 'Student', 'Parent', 'Career at JIMS'], true);
-        }, 600); // Give enough time for the message to appear
+          showOptions(['Admission Aspirant', 'Student', 'Parent', 'Job Seeker'], true);
+        }, 600);
       }, 800);
-
       return;
     }
     return;
