@@ -6,7 +6,7 @@ const userInput = document.getElementById('user-input');
 
 const studentOptions = ['Library', 'Exam updates', 'ERP', 'Internship', 'Academic Calender', 'Previous Year Questions', 'Faculty'];
 const parentOptions = ['Fee Details', 'Faculty', 'Placement', 'Achievements', 'Infrastructure'];
-const admissionOptions = ['Admission Process', 'Courses Offered at JIMS', 'Academic Calender', 'Infrastructure', 'Events'];
+const admissionOptions = ['Admission Process', 'Courses Offered at JIMS', 'Industry Connect', 'Infrastructure', 'Events'];
 
 let currentRole = null;
 
@@ -193,7 +193,7 @@ async function handleFlow(choice, isButtonClick = false) {
       'infrastructure': 'https://www.jimsd.org/institute.php',
       'events': 'https://www.jimsd.org/events.php',
       'calendar': 'https://www.jimsd.org/calender.php',
-      'academic': 'https://www.jimsd.org/calender.php'
+      'industry': 'https://www.jimsd.org/gallery.php'
     }
   };
 
