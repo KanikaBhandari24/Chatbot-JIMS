@@ -12,7 +12,7 @@ let currentRole = null;
 
 const closeChatBot = () => {
   chatbot.style.display = 'none';
-  chatIcon.style.display = 'block';
+  chatIcon.style.display = 'flex';
   chatMessages.innerHTML = '';
 };
 
