@@ -11,7 +11,7 @@ body {
 
 #chat-icon {
   position: fixed;
-  bottom: 90px;
+  bottom: 110px;
   right: 30px;
   background: linear-gradient(135deg, #007bff, #0056b3); /* blue gradient */
   width: 72px;
